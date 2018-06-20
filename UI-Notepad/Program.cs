@@ -16,7 +16,7 @@ namespace UI_Notepad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNotepad());
+            Application.Run(new frmHome());
         }
     }
 }
