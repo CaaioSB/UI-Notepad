@@ -34,6 +34,7 @@
             this.txtNomeProjeto = new System.Windows.Forms.TextBox();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnCriar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(85, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(85, 13);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(91, 17);
             this.lblTitulo.TabIndex = 2;
@@ -68,13 +69,14 @@
             this.txtNomeProjeto.Name = "txtNomeProjeto";
             this.txtNomeProjeto.Size = new System.Drawing.Size(234, 14);
             this.txtNomeProjeto.TabIndex = 1;
+            this.txtNomeProjeto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeProjeto_KeyDown);
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
             this.lblAviso.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAviso.ForeColor = System.Drawing.Color.White;
-            this.lblAviso.Location = new System.Drawing.Point(38, 60);
+            this.lblAviso.Location = new System.Drawing.Point(41, 60);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(174, 15);
             this.lblAviso.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             this.btnCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCriar.ForeColor = System.Drawing.Color.White;
-            this.btnCriar.Location = new System.Drawing.Point(93, 97);
+            this.btnCriar.Location = new System.Drawing.Point(140, 98);
             this.btnCriar.Name = "btnCriar";
             this.btnCriar.Size = new System.Drawing.Size(75, 23);
             this.btnCriar.TabIndex = 4;
@@ -92,12 +94,25 @@
             this.btnCriar.UseVisualStyleBackColor = true;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(44, 98);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(258, 129);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCriar);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.txtNomeProjeto);
@@ -121,5 +136,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Button btnCriar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -34,10 +34,14 @@ namespace UI_Notepad
             if (!String.IsNullOrWhiteSpace(txtConteudo.Text))
             {
                 MessageBox.lblTitulo.Text = "Alterações não salvas";
-                MessageBox.lblDescricao.Text = "Você realmente deseja sair sem salvar as alterações?";
+                MessageBox.lblDescricao.Text = "Há alterações não salva, deseja salvar?";
                 MessageBox.ShowDialog();
 
                 if (MessageBox.Sim != 1)
+                {
+                    txtConteudo.Text = "";
+                }
+                else
                 {
                     saveFileDialog.Title = "UINotepad - BETA";
                     saveFileDialog.Filter = "Text File|.txt";
@@ -50,13 +54,9 @@ namespace UI_Notepad
                     DialogResult resultado = saveFileDialog.ShowDialog();
                     FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
                     StreamWriter writer = new StreamWriter(fs);
+                    txtConteudo.Text = "";
                     writer.Write(txtConteudo.Text);
-                    txtConteudo.Text = "";
                     writer.Close();
-                }
-                else
-                {
-                    txtConteudo.Text = "";
                 }
             }
         }

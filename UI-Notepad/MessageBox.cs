@@ -15,6 +15,7 @@ namespace UI_Notepad
         public MessageBox()
         {
             InitializeComponent();
+            btnFocus.Focus();
         }
 
         public int Sim = -1;
@@ -31,6 +32,30 @@ namespace UI_Notepad
         {
             Sim = -1;
             Nao = 1;
+            Close();
+        }
+        public void Default()
+        {
+            lblTitulo.Text = "Titulo";
+            lblDescricao.Text = "Descrição";
+            btnSim.Text = "Sim";
+            btnNao.Text = "Não";
+            btnFocus.Focus();
+            btnSim.Visible = true;
+            btnNao.Visible = true;
+            picImagem.Image = Properties.Resources.info;
+        }
+
+        private void MessageBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Close();
+            }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }
